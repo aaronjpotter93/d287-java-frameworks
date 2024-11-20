@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import com.example.demo.domain.Part;
 import com.example.demo.domain.Product;
+import com.example.demo.repositories.ProductRepository;
 import com.example.demo.service.PartService;
 import com.example.demo.service.PartServiceImpl;
 import com.example.demo.service.ProductService;
@@ -31,6 +32,10 @@ public class AddProductController {
     private List<Part> theParts;
     private static Product product1;
     private Product product;
+    @Autowired
+    private ProductServiceImpl productServiceImpl;
+    @Autowired
+    private ProductRepository productRepository;
 
     @GetMapping("/showFormAddProduct")
     public String showFormAddPart(Model theModel) {
@@ -172,5 +177,21 @@ public class AddProductController {
         }
         theModel.addAttribute("availparts",availParts);
         return "productForm";
+    }
+    @GetMapping("/buyProduct")
+    public String buyProduct(@RequestParam("productID") int theID){
+        String view;
+        product1 = productServiceImpl.findById(theID);
+        int prodInv = product1.getInv();
+        if (prodInv <= 0) {
+            view = "Failure";
+        }
+        else {
+            product1.setInv(prodInv - 30);
+            productRepository.save(product1);
+            view ="Success";
+        }
+
+        return view;
     }
 }

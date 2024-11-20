@@ -25,21 +25,25 @@ _Customize the HTML user interface for your customer’s application. The user i
 * > templates >
   * > InhousePartForm.html
       * Line: 8
-          * Added \<link stylesheet>
+        * Added \<link stylesheet>
       * Lines 12 - 25
-          * added a navbar
+        * added a navbar
       * Lines 29 - 32
-          * added a new div container for \<h1> tag for styling purposes
+        * added a new div container for \<h1> tag for styling purposes
+      * Line 50
+        * added classes to the submit button for styling
       * Lines 52 - 63
-          * added javascript for animation styling purposes
+        * added javascript for animation styling purposes
   * > OutsourcedPartForm.html
       * Line: 8
-          * Added \<link stylesheet>
+        * Added \<link stylesheet>
       * Lines 12 - 25
-          * added a navbar
+        * added a navbar
       * Lines 29 - 32
-          * added a new div container for \<h1> tag for styling purposes
-    * Lines 52 - 63
+        * added a new div container for \<h1> tag for styling purposes
+      * Line 50
+        * added classes to the submit button for styling
+      * Lines 52 - 63
         * added javascript for animation styling purposes
   * > mainscreen.html
       * Line: 8
@@ -59,6 +63,8 @@ _Customize the HTML user interface for your customer’s application. The user i
       * added a navbar
     * Lines 29 - 32
       * added a new div container for \<h1> tag for styling purposes
+    * Line 50
+      * added classes to the submit button for styling
     * Lines 95 - 105
       * added javascript for animation styling purposes
 * > resources > static > css > demo.css
@@ -74,24 +80,44 @@ _Add an “About” page to the application to describe your chosen customer’s
     * > AboutController.java
         * Added new file
 * ### resources > templates >
-    * > about.html
+    * > About.html
         * Added new file
 
 ### Step E
 #### Prompt:
 _Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database._
 #### Changes:
-* ### resources > application.properties
-    * #FIXME * swapped "update" for "create-drop" for testing
-* ### bootstrap > BootStrapData
-    * Lines 43 - 184
-        * Cleaned up original commented out bootstrap for bicycles
-        * Added InhousePart bootstrap instances
-        * Added Product boostrap instances
+* ### resources > 
+  * > application.properties
+      * #FIXME * swapped "update" for "create-drop" for testing
+* ### bootstrap > 
+  * > BootStrapData
+      * Lines 43 - 184
+          * Cleaned up original commented out bootstrap for bicycles
+          * Added InhousePart bootstrap instances
+          * Added Product boostrap instances
 ### Step F
 #### Prompt:
-_
+_Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:_
+*  _The “Buy Now” button must be next to the buttons that update and delete products._
+*  _The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts._
+*  _Display a message that indicates the success or failure of a purchase._
 #### Changes:
+* ### controllers > 
+  * > AddProductController
+    * Line 5
+      * Added import for ProductRepository
+    * Lines 35 - 38
+      * Autowired ProductServiceImpl and ProductRepository
+    * Lines 181 - 196
+      * Added new method to handle "Buy Now" button
+* ### resources > templates
+  * > mainscreen.html
+    * Line 99
+      * Added "Buy Now" button
+  * > Success.html
+  * > Failure.html
+    * Added two new view pages
 ### Step G
 #### Prompt:
 _
