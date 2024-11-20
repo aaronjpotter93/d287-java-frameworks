@@ -106,6 +106,33 @@
     function clearSearch() {
         window.location = "[[@{/}]]";
     }
+
+    const navbar = document.querySelector('.navbar');
+    const h1Title = document.querySelector('.h1-title');
+    const h3Title = document.querySelector('.h3-title');
+
+    window.addEventListener('scroll', () => {
+        const navbarHeight = navbar.offsetHeight;
+        const h1Position = h1Title.getBoundingClientRect().top;
+
+        if (h1Position < navbarHeight) {
+            h3Title.classList.add('slide-in');
+            h1Title.style.opacity = 0;
+
+            navbar.classList.remove('navbar-scrolled');
+            navbar.classList.add('navbar-lit');
+
+        } else {
+            h3Title.classList.remove('slide-in');
+            h1Title.style.opacity = 1;
+
+            navbar.classList.remove('navbar-lit');
+            navbar.classList.add('navbar-scrolled');
+        }
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+        navbar.classList.remove('navbar-lit');
+    });
 </script>
 
 </body>
