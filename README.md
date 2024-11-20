@@ -67,12 +67,40 @@ _Customize the HTML user interface for your customer’s application. The user i
 
 
 ### Step D
+#### Prompt:
+_Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen._
+#### Changes:
+* ### controllers >
+    * > AboutController.java
+        * Added new file
+* ### resources > templates >
+    * > about.html
+        * Added new file
+
 ### Step E
+#### Prompt:
+_
+#### Changes:
 ### Step F
+#### Prompt:
+_
+#### Changes:
 ### Step G
+#### Prompt:
+_
+#### Changes:
 ### Step H
+#### Prompt:
+_
+#### Changes:
 ### Step I
+#### Prompt:
+_
+#### Changes:
 ### Step J
+#### Prompt:
+_
+#### Changes:
 
 ## FUTURE USE
 Take this opportunity to create or add to a simple resume portfolio to highlight and showcase your work for future use in career search, experience, and education!
