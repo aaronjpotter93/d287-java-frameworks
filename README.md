@@ -79,8 +79,15 @@ _Add an “About” page to the application to describe your chosen customer’s
 
 ### Step E
 #### Prompt:
-_
+_Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database._
 #### Changes:
+* ### resources > application.properties
+    * #FIXME * swapped "update" for "create-drop" for testing
+* ### bootstrap > BootStrapData
+    * Lines 43 - 184
+        * Cleaned up original commented out bootstrap for bicycles
+        * Added InhousePart bootstrap instances
+        * Added Product boostrap instances
 ### Step F
 #### Prompt:
 _
