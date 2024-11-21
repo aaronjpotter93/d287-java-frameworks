@@ -41,11 +41,13 @@ public class BootStrapData implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         if (partRepository.count() == 0) {
-            InhousePart grndBeef = new InhousePart();
+            OutsourcedPart grndBeef = new OutsourcedPart();
             grndBeef.setName("Beef");
             grndBeef.setInv(30);
             grndBeef.setPrice(4.99);
             grndBeef.setId(1);
+            grndBeef.setMinInv(5);
+            grndBeef.setMaxInv(30);
 
             partRepository.save(grndBeef);
 
@@ -54,6 +56,8 @@ public class BootStrapData implements CommandLineRunner {
             tacoSeasoning.setInv(30);
             tacoSeasoning.setPrice(2.49);
             tacoSeasoning.setId(2);
+            tacoSeasoning.setMinInv(5);
+            tacoSeasoning.setMaxInv(30);
 
             partRepository.save(tacoSeasoning);
 
@@ -62,6 +66,8 @@ public class BootStrapData implements CommandLineRunner {
             tomatoRoma.setInv(30);
             tomatoRoma.setPrice(0.79);
             tomatoRoma.setId(3);
+            tomatoRoma.setMinInv(5);
+            tomatoRoma.setMaxInv(30);
 
             partRepository.save(tomatoRoma);
 
@@ -70,6 +76,8 @@ public class BootStrapData implements CommandLineRunner {
             sourCream.setInv(30);
             sourCream.setPrice(2.79);
             sourCream.setId(4);
+            sourCream.setMinInv(5);
+            sourCream.setMaxInv(30);
 
             partRepository.save(sourCream);
 
@@ -78,6 +86,8 @@ public class BootStrapData implements CommandLineRunner {
             shrdCheese.setInv(30);
             shrdCheese.setPrice(3.79);
             shrdCheese.setId(5);
+            shrdCheese.setMinInv(5);
+            shrdCheese.setMaxInv(30);
 
             partRepository.save(shrdCheese);
 
@@ -87,6 +97,8 @@ public class BootStrapData implements CommandLineRunner {
             noodles.setInv(30);
             noodles.setPrice(1.49);
             noodles.setId(6);
+            noodles.setMinInv(5);
+            noodles.setMaxInv(30);
 
             partRepository.save(noodles);
 
@@ -95,6 +107,8 @@ public class BootStrapData implements CommandLineRunner {
             marinara.setInv(30);
             marinara.setPrice(3.79);
             marinara.setId(7);
+            marinara.setMinInv(5);
+            marinara.setMaxInv(30);
 
             partRepository.save(marinara);
 
@@ -103,6 +117,8 @@ public class BootStrapData implements CommandLineRunner {
             italianSeasoning.setInv(30);
             italianSeasoning.setPrice(1.79);
             italianSeasoning.setId(8);
+            italianSeasoning.setMinInv(5);
+            italianSeasoning.setMaxInv(30);
 
             partRepository.save(italianSeasoning);
 
@@ -111,6 +127,8 @@ public class BootStrapData implements CommandLineRunner {
             parmesean.setInv(30);
             parmesean.setPrice(3.79);
             parmesean.setId(9);
+            parmesean.setMinInv(5);
+            parmesean.setMaxInv(30);
 
             partRepository.save(parmesean);
 
@@ -120,6 +138,8 @@ public class BootStrapData implements CommandLineRunner {
             russet.setInv(30);
             russet.setPrice(1.79);
             russet.setId(10);
+            russet.setMinInv(5);
+            russet.setMaxInv(30);
 
             partRepository.save(russet);
 
@@ -129,6 +149,8 @@ public class BootStrapData implements CommandLineRunner {
             americanCheese.setInv(30);
             americanCheese.setPrice(4.79);
             americanCheese.setId(12);
+            americanCheese.setMinInv(5);
+            americanCheese.setMaxInv(30);
 
             partRepository.save(americanCheese);
 
@@ -137,6 +159,8 @@ public class BootStrapData implements CommandLineRunner {
             eggs.setInv(30);
             eggs.setPrice(2.79);
             eggs.setId(14);
+            eggs.setMinInv(5);
+            eggs.setMaxInv(30);
 
             partRepository.save(eggs);
 
@@ -145,6 +169,8 @@ public class BootStrapData implements CommandLineRunner {
             engMuff.setInv(30);
             engMuff.setPrice(3.79);
             engMuff.setId(15);
+            engMuff.setMinInv(5);
+            engMuff.setMaxInv(30);
 
             partRepository.save(engMuff);
 
@@ -154,6 +180,8 @@ public class BootStrapData implements CommandLineRunner {
             alfredo.setInv(30);
             alfredo.setPrice(3.79);
             alfredo.setId(16);
+            alfredo.setMinInv(5);
+            alfredo.setMaxInv(30);
 
             partRepository.save(alfredo);
 
@@ -162,6 +190,8 @@ public class BootStrapData implements CommandLineRunner {
             greenBeans.setInv(30);
             greenBeans.setPrice(1.79);
             greenBeans.setId(17);
+            greenBeans.setMinInv(5);
+            greenBeans.setMaxInv(30);
 
             partRepository.save(greenBeans);
         }

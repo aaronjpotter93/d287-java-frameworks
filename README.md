@@ -120,20 +120,64 @@ _Add a “Buy Now” button to your product list. Your “Buy Now” button must
     * Added two new view pages
 ### Step G
 #### Prompt:
-_
+_G.  Modify the parts to track maximum and minimum inventory by doing the following:_
+*  _Add additional fields to the part entity for maximum and minimum inventory._
+*  _Modify the sample inventory to include the maximum and minimum fields._
+*  _Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values._
+
+[//]: # (* FIXME * What does this mean? rename the repository?)
+*  _Rename the file the persistent storage is saved to._ 
+*  _Modify the code to enforce that the inventory is between or at the minimum and maximum value._
 #### Changes:
+* ### bootstrap >
+  * > BootStrapData
+    * Line 44
+      * Changed Beef from an Inhouse Part to an Outsourced Part
+    * Lines 49 - 194
+      * Set min and max inventory for each sample part
+* ### domain >
+  * > Part
+    * Lines 4 - 5
+      * import ValidPartInventory & ValidMaxInv validators
+    * Lines 21 - 22
+      * annotate class with ValidPartInventory & ValidMaxInv
+    * Lines 36 - 39
+      * two new fields for entity - maxInv, minInv(annotated with @Min)
+    * Lines 94 - 109
+      * getters and setters for minInv, maxInv
+* ### validators >
+  * > ValidPartInventory
+  * > ValidMaxInv
+    * Added two new annotations
+  * > PartInventoryValidator
+  * > MaxInvValidator
+    * Added two new validators
+* ### resources > templates >
+  * > InhousePartForm
+    * Lines 48 - 53
+      * Added two new input fields for minIn & maxInv
+    * Lines 56 - 64
+      * Added lines for printing new validator error messages
+  * > OutsourcedPartForm
+  * Lines 45 - 51
+      * Added two new input fields for minIn & maxInv
+  * Lines 56 - 64
+      * Added lines for printing new validator error messages
 ### Step H
 #### Prompt:
 _
 #### Changes:
+* ###
 ### Step I
 #### Prompt:
 _
 #### Changes:
+* ###
 ### Step J
 #### Prompt:
 _
 #### Changes:
+* ###
 
 ## FUTURE USE
 Take this opportunity to create or add to a simple resume portfolio to highlight and showcase your work for future use in career search, experience, and education!
