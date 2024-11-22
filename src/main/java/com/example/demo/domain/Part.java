@@ -1,6 +1,5 @@
 package com.example.demo.domain;
 
-import com.example.demo.validators.ValidDeletePart;
 import com.example.demo.validators.ValidPartInventory;
 import com.example.demo.validators.ValidMaxInv;
 
@@ -17,7 +16,6 @@ import java.util.Set;
  *
  */
 @Entity
-@ValidDeletePart
 @ValidMaxInv
 @ValidPartInventory
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)

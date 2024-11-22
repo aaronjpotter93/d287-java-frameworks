@@ -212,9 +212,17 @@ _Add at least two unit tests for the maximum and minimum fields to the PartTest 
       * Added getter & setter tests for min and max fields
 ### Step J
 #### Prompt:
-_
+_Remove the class files for any unused validators in order to clean your code._
 #### Changes:
-* ###
+* ### domain >
+  * > Part
+    * Line 20
+      * Removed @ValidDeletePart _unused_
+* ### validators >
+  * > DeletePartValidator
+    * Deleted validator class _unused_
+  * > ValidDeletePart
+    * Deleted annotation class _unused_
 
 ## FUTURE USE
 Take this opportunity to create or add to a simple resume portfolio to highlight and showcase your work for future use in career search, experience, and education!
