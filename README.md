@@ -204,9 +204,12 @@ _Add validation for between or at the maximum and minimum fields. The validation
 
 ### Step I
 #### Prompt:
-_
+_Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package._
 #### Changes:
-* ###
+* ### test > ... > ... > domain > 
+  * > PartTest
+    * Lines 159 - 195
+      * Added getter & setter tests for min and max fields
 ### Step J
 #### Prompt:
 _
