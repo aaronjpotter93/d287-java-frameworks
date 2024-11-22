@@ -35,7 +35,7 @@
     <hr class="border-secondary">
 
     <!-- Parts -->
-    <h3>Parts</h3>
+    <h3 class="section-title">Parts</h3>
     <form th:action="@{/mainscreen}" class="mb-3">
         <label for="partkeyword">Filter:</label>
         <input type="text" name="partkeyword" id="partkeyword" size="50" th:value="${partkeyword}" required class="form-control d-inline w-50"/>
@@ -51,6 +51,8 @@
             <th>Name</th>
             <th>Price</th>
             <th>Inventory</th>
+            <th>Min</th>
+            <th>Max</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -59,6 +61,8 @@
             <td th:text="${tempPart.name}">Part Name</td>
             <td th:text="${tempPart.price}">$0.00</td>
             <td th:text="${tempPart.inv}">Stock</td>
+            <td th:text="${tempPart.minInv}">Min</td>
+            <td th:text="${tempPart.maxInv}">Max</td>
             <td>
                 <a th:href="@{/showPartFormForUpdate(partID=${tempPart.id})}" class="btn btn-primary btn-sm">Update</a>
                 <a th:href="@{/deletepart(partID=${tempPart.id})}" class="btn btn-delete btn-sm"
@@ -69,7 +73,7 @@
     </table>
 
     <!-- Products -->
-    <h3>Products</h3>
+    <h3 class="section-title">Products</h3>
     <form th:action="@{/mainscreen}" class="mb-3">
         <label for="productkeyword">Filter:</label>
         <input type="text" name="productkeyword" id="productkeyword" size="50" th:value="${productkeyword}" required class="form-control d-inline w-50"/>

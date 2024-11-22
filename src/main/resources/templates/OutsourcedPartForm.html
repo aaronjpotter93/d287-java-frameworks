@@ -36,21 +36,43 @@
 <!-- Add hidden form field to handle update -->
     <p><input type="hidden" th:field="*{id}"/></p>
 
-<p><input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4"/></p>
+<p>
+    <input type="text" th:field="*{name}" class="form-control mb-4 col-4"/>
+    <span class="label">Name</span>
+</p>
 
-<p><input type="text" th:field="*{price}" placeholder= "Price" class="form-control mb-4 col-4"/></p>
-    <p class="error" th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</p>
+<p>
+    <input type="text" path="price" th:field="*{price}" class="form-control mb-4 col-4"/>
+    <span class="label">Price</span>
+</p>
 
-<p><input type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
-    <p class="error" th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">Inventory Error</p>
+<p class="error" th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</p>
 
-    <p><input type="text" th:field="*{minInv}" placeholder="Set Minimum Inventory" class="form-control mb-4 col-4"/></p>
-    <p class="error" th:if="${#fields.hasErrors('minInv')}" th:errors="*{minInv}">Error</p>
+<p>
+    <input type="text" path="inv" th:field="*{inv}" class="form-control mb-4 col-4"/>
+    <span class="label">Inventory</span>
+</p>
 
-    <p><input type="text" th:field="*{maxInv}" placeholder="Set Maximum Inventory" class="form-control mb-4 col-4"/></p>
-    <p class="error" th:if="${#fields.hasErrors('maxInv')}" th:errors="*{maxInv}">Error</p>
+<p class="error" th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">Inventory Error</p>
 
-    <p><input type="text" th:field="*{companyName}" placeholder="Company Name" class="form-control mb-4 col-4"/></p>
+<p>
+    <input type="text" th:field="*{minInv}" class="form-control mb-4 col-4"/>
+    <span class="label">Set Minimum Inventory</span>
+</p>
+
+<p class="error" th:if="${#fields.hasErrors('minInv')}" th:errors="*{minInv}">Error</p>
+
+<p>
+    <input type="text" th:field="*{maxInv}" placeholder="Set Maximum Inventory" class="form-control mb-4 col-4"/>
+    <span class="label">Set Maximum Inventory</span>
+</p>
+
+<p class="error" th:if="${#fields.hasErrors('maxInv')}" th:errors="*{maxInv}">Error</p>
+
+<p>
+    <input type="text" th:field="*{companyName}" class="form-control mb-4 col-4"/>
+    <span class="label">Company Name</span>
+</p>
 
 
     <div class="p" th:if="${#fields.hasErrors()}">

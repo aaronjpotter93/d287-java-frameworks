@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,29 +31,38 @@
     <h1 id="title" class="title text-center h1-title" data-text="Product Detail">Product Detail</h1>
 </div>
 
-<form action="#" th:action="@{/showFormAddProduct}" th:object="${product}" method="POST"}>
+<form class="container" action="#" th:action="@{/showFormAddProduct}" th:object="${product}" method="POST"}>
     <!-- Add hidden form field to handle update -->
     <p><input type="hidden" th:field="*{id}"/></p>
 
-    <p><input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4"/></p>
+    <p>
+        <input type="text" th:field="*{name}" class="form-control mb-4 col-4"/>
+        <span class="label">Name</span>
+    </p>
 
-    <p><input type="text" th:field="*{price}" placeholder= "Price" class="form-control mb-4 col-4"/></p>
+    <p>
+        <input type="text" th:field="*{price}" class="form-control mb-4 col-4"/>
+        <span class="label">Price</span>
+    </p>
 
 
-    <p><input type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
+    <p>
+        <input type="text" th:field="*{inv}" class="form-control mb-4 col-4"/>
+        <span class="label">Inventory</span>
+    </p>
 
     <p>
     <div th:if="${#fields.hasAnyErrors()}">
-    <ul><li th:each="err: ${#fields.allErrors()}" th:text="${err}"></li></ul>
+    <ul><li class="error" th:each="err: ${#fields.allErrors()}" th:text="${err}"></li></ul>
     </div>
     </p>
     <p><input class="btn, btn-submit btn-sm" type="submit" value="Submit" /></p>
 </form>
 
 
-<table class="table table-bordered table-striped">
+<table class="container table table-striped">
     <thead class="thead-dark">
-    <h2>Available Parts</h2>
+    <h2 class="container section-title">Available Parts</h2>
     <tr>
         <th>Name</th>
         <th>Price</th>
@@ -71,8 +80,8 @@
     </tr>
     </form>
 </table>
-    <table class="table table-bordered table-striped">
-        <h2>Associated Parts</h2>
+<table class="container table table-striped">
+    <h2 class="container section-title">Associated Parts</h2>
         <thead class="thead-dark">
         <tr>
             <th>Name</th>

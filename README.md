@@ -120,7 +120,7 @@ _Add a “Buy Now” button to your product list. Your “Buy Now” button must
     * Added two new view pages
 ### Step G
 #### Prompt:
-_G.  Modify the parts to track maximum and minimum inventory by doing the following:_
+_Modify the parts to track maximum and minimum inventory by doing the following:_
 *  _Add additional fields to the part entity for maximum and minimum inventory._
 *  _Modify the sample inventory to include the maximum and minimum fields._
 *  _Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values._
@@ -165,9 +165,43 @@ _G.  Modify the parts to track maximum and minimum inventory by doing the follow
       * Added lines for printing new validator error messages
 ### Step H
 #### Prompt:
-_
+_Add validation for between or at the maximum and minimum fields. The validation must include the following:_
+*  _Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts._
+*  _Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum._
+*  _Display error messages when adding and updating parts if the inventory is greater than the maximum._
 #### Changes:
-* ###
+* ### controllers > 
+  * > AddProductController 
+    * Lines 62 - 92
+      * refactored post handler for error binding to maintain form input
+* ### validators >
+  * > EnufPartsValidator
+    * Line 36
+      * Increased comparable operator by the minInv amount
+* ### resources > templates
+  * >  mainscreen.html
+    * Lines 54 - 55
+      * Added Min & Max <th> values
+    * Lines 64 - 65
+      * Added Min & Max <td> values
+#### Style Changes: 
+  * ### resources > templates
+    * > InhousePartForm.html
+      * Lines 39 - 75
+        * Added span tag to style the form field placeholder values
+    * > InhousePartForm.html
+      * Lines 39 - 75
+        * Added span tag to style the form field placeholder values
+    * > negativeerror.html
+      * Lines 4 - 7
+        * style imports
+      * Lines 11 - 25
+        * added navbar
+      * Lines 26 - 31
+        * styling body text
+      * Lines 33 - 61
+        * added navbar and redirect scripts
+
 ### Step I
 #### Prompt:
 _
