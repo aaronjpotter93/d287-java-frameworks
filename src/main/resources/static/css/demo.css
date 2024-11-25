@@ -69,6 +69,13 @@ body {
     transition: transform 0.3s ease-out, opacity 0.75s ease-in;
 }
 
+/* When h3 title becomes visible */
+.h3-title.slide-in {
+    right: 0;
+    margin-bottom: 20px;
+    opacity: 1; /* Make the h3 title visible */
+}
+
 .h3-title::before {
     content: attr(data-text);
     position: relative;
@@ -420,6 +427,12 @@ h1 {
     color: #b5fffc;
 }
 
+.thank-you, .failure {
+    width: 80%;
+    transition: 0.75s ease;
+    justify-self: center;
+}
+
 @media (max-width: 1000px) {
     .title {
         font-size: 54px;
@@ -432,7 +445,7 @@ h1 {
         font-size: 16px;
         transition: 0.75s ease;
     }
-    .thank-you {
+    .thank-you, .failure {
         width: 500px;
         transition: 0.75s ease;
     }
@@ -441,7 +454,7 @@ h1 {
 /* Adjust title font size and margins for smaller screens */
 @media (max-width: 700px) {
     .container {
-        max-width: 93%;
+        max-width: 90%;
     }
     #title {
         padding: 10px;
@@ -477,7 +490,7 @@ h1 {
     .title::before {
         left: 18px;
     }
-    .thank-you {
+    .thank-you, .failure {
         width: 300px;
         transition: 0.75s ease;
     }
