@@ -1,9 +1,7 @@
 package com.example.demo.bootstrap;
 
-import com.example.demo.domain.InhousePart;
-import com.example.demo.domain.OutsourcedPart;
-import com.example.demo.domain.Part;
-import com.example.demo.domain.Product;
+import com.example.demo.domain.*;
+import com.example.demo.repositories.NonGroceryRepository;
 import com.example.demo.repositories.OutsourcedPartRepository;
 import com.example.demo.repositories.PartRepository;
 import com.example.demo.repositories.ProductRepository;
@@ -28,17 +26,31 @@ public class BootStrapData implements CommandLineRunner {
 
     private final PartRepository partRepository;
     private final ProductRepository productRepository;
+    private final NonGroceryRepository nonGroceryRepository;
 
     private final OutsourcedPartRepository outsourcedPartRepository;
 
-    public BootStrapData(PartRepository partRepository, ProductRepository productRepository, OutsourcedPartRepository outsourcedPartRepository) {
+    public BootStrapData(PartRepository partRepository, ProductRepository productRepository, NonGroceryRepository nonGroceryRepository, OutsourcedPartRepository outsourcedPartRepository) {
         this.partRepository = partRepository;
         this.productRepository = productRepository;
+        this.nonGroceryRepository = nonGroceryRepository;
         this.outsourcedPartRepository=outsourcedPartRepository;
     }
 
     @Override
     public void run(String... args) throws Exception {
+
+        if (nonGroceryRepository.count() == 0) {
+            NonGrocery lotion = new NonGrocery();
+            lotion.setName("Lotion");
+            lotion.setInv(30);
+            lotion.setPrice(4.99);
+            lotion.setId(1);
+            lotion.setMinInv(5);
+            lotion.setMaxInv(30);
+
+            nonGroceryRepository.save(lotion);
+        }
 
         if (partRepository.count() == 0) {
             OutsourcedPart grndBeef = new OutsourcedPart();

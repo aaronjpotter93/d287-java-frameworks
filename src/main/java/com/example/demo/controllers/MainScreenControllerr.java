@@ -1,9 +1,12 @@
 package com.example.demo.controllers;
 
+import com.example.demo.domain.NonGrocery;
 import com.example.demo.domain.Part;
 import com.example.demo.domain.Product;
+import com.example.demo.repositories.NonGroceryRepository;
 import com.example.demo.repositories.PartRepository;
 import com.example.demo.repositories.ProductRepository;
+import com.example.demo.service.NonGroceryService;
 import com.example.demo.service.PartService;
 import com.example.demo.service.ProductService;
 import org.springframework.data.repository.query.Param;
@@ -22,31 +25,27 @@ import java.util.List;
 
 @Controller
 public class MainScreenControllerr {
-   // private final PartRepository partRepository;
-   // private final ProductRepository productRepository;'
 
-    private PartService partService;
-    private ProductService productService;
+    private final PartService partService;
+    private final ProductService productService;
+    private final NonGroceryService nonGroceryService;
 
-    private List<Part> theParts;
-    private List<Product> theProducts;
-
- /*   public MainScreenControllerr(PartRepository partRepository, ProductRepository productRepository) {
-        this.partRepository = partRepository;
-        this.productRepository = productRepository;
-    }*/
-
-    public MainScreenControllerr(PartService partService,ProductService productService){
+    public MainScreenControllerr(PartService partService, ProductService productService, NonGroceryService nonGroceryService){
         this.partService=partService;
         this.productService=productService;
+        this.nonGroceryService = nonGroceryService;
     }
     @GetMapping("/mainscreen")
-    public String listPartsandProducts(Model theModel, @Param("partkeyword") String partkeyword, @Param("productkeyword") String productkeyword){
-        //add to the sprig model
+    public String listPartsandProducts(Model theModel, @Param("partkeyword") String partkeyword, @Param("productkeyword") String productkeyword, @Param("nongrockeyword") String nongrockeyword){
+
         List<Part> partList=partService.listAll(partkeyword);
         theModel.addAttribute("parts",partList);
         theModel.addAttribute("partkeyword",partkeyword);
-    //    theModel.addAttribute("products",productService.findAll());
+
+        List<NonGrocery> theNonGroceries=nonGroceryService.listAll(nongrockeyword);
+        theModel.addAttribute("nonGroceries",theNonGroceries);
+        theModel.addAttribute("nongrockeyword",nongrockeyword);
+
         List<Product> productList=productService.listAll(productkeyword);
         theModel.addAttribute("products", productList);
         theModel.addAttribute("productkeyword",productkeyword);

@@ -314,10 +314,21 @@ form {
 }
 
 /* Lit-up effect for the navbar on load */
+.navbar-lit::before {
+    transform: translateX(0); /* Move in from the right */
+}
 
 /* Navbar scroll effect */
+.navbar-scrolled::before {
+    transform: translateX(100%); /* Slide out to the right */
+}
 
 /* Navbar brand styling */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e6e6fa !important;
+}
 
 .navbar ul {
     display: flex;
@@ -430,7 +441,7 @@ h1 {
 /* Adjust title font size and margins for smaller screens */
 @media (max-width: 700px) {
     .container {
-        max-width: 90%;
+        max-width: 93%;
     }
     #title {
         padding: 10px;
@@ -470,12 +481,16 @@ h1 {
         width: 300px;
         transition: 0.75s ease;
     }
+    p {
+        font-size: 12px;
+        transition: 0.75s ease;
+    }
 }
 
 /* Even smaller screens */
 @media (max-width: 450px) {
     .container {
-        max-width: 97%;
+        max-width: 95%;
     }
     #title {
         padding: 5px;
