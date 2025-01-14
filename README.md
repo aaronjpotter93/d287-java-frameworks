@@ -1,4 +1,4 @@
-# Receipt Splitter App
+# Online Grocery Shopping
 ### D287 – JAVA FRAMEWORKS
 
 ### This App includes the following features:
